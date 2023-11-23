@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 @main
 struct GymPulseApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
             LoginView()
