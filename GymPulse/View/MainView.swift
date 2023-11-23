@@ -13,11 +13,10 @@ struct MainView: View {
     @Environment(\.modelContext) var modelContext
     @EnvironmentObject private var authDataProvider: AuthDataProvider
     @Query var workouts: [Workout]
-    @State private var path = NavigationPath()
-    @State private var showProfileView = false
+    @StateObject private var viewModel = MainViewModel()
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $viewModel.path) {
             VStack {
                 if workouts.isEmpty {
                     emptyView
@@ -28,13 +27,13 @@ struct MainView: View {
             .navigationDestination(for: Workout.self) { _ in
                 EmptyView()
             }
-            .navigationDestination(isPresented: $showProfileView) {
+            .navigationDestination(isPresented: $viewModel.showProfileView) {
                 ProfileView()
             }
             .toolbar {
                 ToolbarItem {
                     Button {
-                        showProfileView = true
+                        viewModel.showProfileView = true
                     } label: {
                         Image(systemName: "person.fill")
                     }
@@ -43,7 +42,7 @@ struct MainView: View {
                 if !workouts.isEmpty {
                     ToolbarItem {
                         Button {
-                            createWorkout()
+                            viewModel.createWorkout(modelContext)
                         } label: {
                             Image(systemName: "plus")
                         }
@@ -60,7 +59,7 @@ struct MainView: View {
             Text("Start creating a workout to use the app")
         }, actions: {
             Button {
-                createWorkout()
+                viewModel.createWorkout(modelContext)
             } label: {
                 Text("Create")
             }
@@ -75,25 +74,11 @@ struct MainView: View {
             }
             
             Button {
-                clearWorkouts()
+                viewModel.clearWorkouts(modelContext)
             } label: {
                 Text("Clear")
             }
             .buttonStyle(.bordered)
-        }
-    }
-    
-    func createWorkout() {
-        let workout = Workout(name: "Workout \(Int.random(in: 1...100))", breakDurationInS: 150)
-        modelContext.insert(workout)
-        path.append(workout)
-    }
-    
-    func clearWorkouts() {
-        do {
-            try modelContext.delete(model: Workout.self)
-        } catch let error {
-            print(error)
         }
     }
 }

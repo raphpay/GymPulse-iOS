@@ -55,6 +55,7 @@
 		865106672B0F9FCD0011B4A1 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106662B0F9FCD0011B4A1 /* Workout.swift */; };
 		865106692B0FA0320011B4A1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106682B0FA0320011B4A1 /* Exercise.swift */; };
 		8651066C2B0FA54C0011B4A1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651066B2B0FA54C0011B4A1 /* ProfileView.swift */; };
+		8651066E2B0FA6680011B4A1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651066D2B0FA6680011B4A1 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		865106662B0F9FCD0011B4A1 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		865106682B0FA0320011B4A1 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		8651066B2B0FA54C0011B4A1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8651066D2B0FA6680011B4A1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				8651060F2B0F884A0011B4A1 /* LoginView.swift */,
 				865106602B0F9A8A0011B4A1 /* LoginViewModel.swift */,
 				8651065E2B0F93840011B4A1 /* MainView.swift */,
+				8651066D2B0FA6680011B4A1 /* MainViewModel.swift */,
 				8651066B2B0FA54C0011B4A1 /* ProfileView.swift */,
 			);
 			path = View;
@@ -322,6 +325,7 @@
 				865106102B0F884A0011B4A1 /* LoginView.swift in Sources */,
 				865106042B0F877E0011B4A1 /* ContentView.swift in Sources */,
 				865106692B0FA0320011B4A1 /* Exercise.swift in Sources */,
+				8651066E2B0FA6680011B4A1 /* MainViewModel.swift in Sources */,
 				865106022B0F877E0011B4A1 /* GymPulseApp.swift in Sources */,
 				865106672B0F9FCD0011B4A1 /* Workout.swift in Sources */,
 				865106592B0F8D260011B4A1 /* AuthService.swift in Sources */,
