@@ -27,15 +27,35 @@ struct CreateWorkoutView: View {
                         Text("\(minute)min")
                     }
                 }
+                .onChange(of: minutes) { _, _ in
+                    updateWorkoutDuration()
+                }
                 
                 Picker("Seconds", selection: $seconds) {
                     ForEach(0..<60) { second in
                         Text("\(second)sec")
                     }
                 }
+                .onChange(of: seconds) { _, _ in
+                    updateWorkoutDuration()
+                }
             }
         }
         .padding()
+        .onAppear {
+            updatePickersFromWorkoutDuration()
+        }
+    }
+    
+    func updatePickersFromWorkoutDuration() {
+        let totalSeconds = Int(workout.breakDurationInS)
+        minutes = totalSeconds / 60
+        seconds = totalSeconds % 60
+    }
+    
+    func updateWorkoutDuration() {
+        let totalSeconds = minutes * 60 + seconds
+        workout.breakDurationInS = Double(totalSeconds)
     }
 }
 

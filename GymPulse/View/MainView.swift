@@ -70,7 +70,12 @@ struct MainView: View {
     var workoutList: some View {
         VStack {
             ForEach(workouts) { workout in
-                Text(workout.name)
+                NavigationLink {
+                    WorkoutView(workout: workout)
+                } label: {
+                    Text(workout.name)
+                }
+
             }
             
             Button {
