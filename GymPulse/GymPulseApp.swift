@@ -12,10 +12,15 @@ import FirebaseAuth
 struct GymPulseApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @ObservedObject private var authDataProvider = AuthDataProvider()
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            ContentView()
+                .environmentObject(authDataProvider)
+                .onAppear {
+                    authDataProvider.checkUserStatus()
+                }
         }
     }
 }

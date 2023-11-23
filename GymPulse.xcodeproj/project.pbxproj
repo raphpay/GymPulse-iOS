@@ -13,7 +13,7 @@
 		865106092B0F87810011B4A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865106082B0F87810011B4A1 /* Preview Assets.xcassets */; };
 		865106102B0F884A0011B4A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651060F2B0F884A0011B4A1 /* LoginView.swift */; };
 		865106122B0F88760011B4A1 /* Assets+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106112B0F88760011B4A1 /* Assets+Enum.swift */; };
-		865106142B0F8B6D0011B4A1 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 865106132B0F8B6D0011B4A1 /* GoogleService-Info-2.plist */; };
+		865106142B0F8B6D0011B4A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 865106132B0F8B6D0011B4A1 /* GoogleService-Info.plist */; };
 		865106172B0F8B750011B4A1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 865106162B0F8B750011B4A1 /* FirebaseAnalytics */; };
 		865106192B0F8B750011B4A1 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 865106182B0F8B750011B4A1 /* FirebaseAnalyticsOnDeviceConversion */; };
 		8651061B2B0F8B750011B4A1 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8651061A2B0F8B750011B4A1 /* FirebaseAnalyticsSwift */; };
@@ -47,6 +47,10 @@
 		865106532B0F8BD10011B4A1 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 865106522B0F8BD10011B4A1 /* FirebaseRemoteConfigSwift */; };
 		865106552B0F8BD10011B4A1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 865106542B0F8BD10011B4A1 /* FirebaseStorage */; };
 		865106572B0F8BD10011B4A1 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 865106562B0F8BD10011B4A1 /* FirebaseStorageCombine-Community */; };
+		865106592B0F8D260011B4A1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106582B0F8D260011B4A1 /* AuthService.swift */; };
+		8651065B2B0F8E260011B4A1 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651065A2B0F8E260011B4A1 /* FirestoreService.swift */; };
+		8651065D2B0F92E90011B4A1 /* AuthDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651065C2B0F92E90011B4A1 /* AuthDataProvider.swift */; };
+		8651065F2B0F93840011B4A1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651065E2B0F93840011B4A1 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,8 +61,12 @@
 		865106082B0F87810011B4A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8651060F2B0F884A0011B4A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		865106112B0F88760011B4A1 /* Assets+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+Enum.swift"; sourceTree = "<group>"; };
-		865106132B0F8B6D0011B4A1 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		865106132B0F8B6D0011B4A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		865106202B0F8B830011B4A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		865106582B0F8D260011B4A1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		8651065A2B0F8E260011B4A1 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		8651065C2B0F92E90011B4A1 /* AuthDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataProvider.swift; sourceTree = "<group>"; };
+		8651065E2B0F93840011B4A1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +134,14 @@
 				865106012B0F877E0011B4A1 /* GymPulseApp.swift */,
 				865106202B0F8B830011B4A1 /* AppDelegate.swift */,
 				8651060F2B0F884A0011B4A1 /* LoginView.swift */,
+				865106582B0F8D260011B4A1 /* AuthService.swift */,
+				8651065A2B0F8E260011B4A1 /* FirestoreService.swift */,
+				8651065C2B0F92E90011B4A1 /* AuthDataProvider.swift */,
 				865106032B0F877E0011B4A1 /* ContentView.swift */,
+				8651065E2B0F93840011B4A1 /* MainView.swift */,
 				865106112B0F88760011B4A1 /* Assets+Enum.swift */,
 				865106052B0F87810011B4A1 /* Assets.xcassets */,
-				865106132B0F8B6D0011B4A1 /* GoogleService-Info-2.plist */,
+				865106132B0F8B6D0011B4A1 /* GoogleService-Info.plist */,
 				865106072B0F87810011B4A1 /* Preview Content */,
 			);
 			path = GymPulse;
@@ -240,7 +252,7 @@
 			files = (
 				865106092B0F87810011B4A1 /* Preview Assets.xcassets in Resources */,
 				865106062B0F87810011B4A1 /* Assets.xcassets in Resources */,
-				865106142B0F8B6D0011B4A1 /* GoogleService-Info-2.plist in Resources */,
+				865106142B0F8B6D0011B4A1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,9 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8651065D2B0F92E90011B4A1 /* AuthDataProvider.swift in Sources */,
+				8651065F2B0F93840011B4A1 /* MainView.swift in Sources */,
+				8651065B2B0F8E260011B4A1 /* FirestoreService.swift in Sources */,
 				865106102B0F884A0011B4A1 /* LoginView.swift in Sources */,
 				865106042B0F877E0011B4A1 /* ContentView.swift in Sources */,
 				865106022B0F877E0011B4A1 /* GymPulseApp.swift in Sources */,
+				865106592B0F8D260011B4A1 /* AuthService.swift in Sources */,
 				865106212B0F8B830011B4A1 /* AppDelegate.swift in Sources */,
 				865106122B0F88760011B4A1 /* Assets+Enum.swift in Sources */,
 			);
