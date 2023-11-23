@@ -14,6 +14,7 @@ struct MainView: View {
     @EnvironmentObject private var authDataProvider: AuthDataProvider
     @Query var workouts: [Workout]
     @State private var path = NavigationPath()
+    @State private var showProfileView = false
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -27,10 +28,13 @@ struct MainView: View {
             .navigationDestination(for: Workout.self) { _ in
                 EmptyView()
             }
+            .navigationDestination(isPresented: $showProfileView) {
+                ProfileView()
+            }
             .toolbar {
                 ToolbarItem {
                     Button {
-                        // TODO: Go to profile view
+                        showProfileView = true
                     } label: {
                         Image(systemName: "person.fill")
                     }
