@@ -52,6 +52,8 @@
 		8651065D2B0F92E90011B4A1 /* AuthDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651065C2B0F92E90011B4A1 /* AuthDataProvider.swift */; };
 		8651065F2B0F93840011B4A1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651065E2B0F93840011B4A1 /* MainView.swift */; };
 		865106612B0F9A8A0011B4A1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106602B0F9A8A0011B4A1 /* LoginViewModel.swift */; };
+		865106672B0F9FCD0011B4A1 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106662B0F9FCD0011B4A1 /* Workout.swift */; };
+		865106692B0FA0320011B4A1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106682B0FA0320011B4A1 /* Exercise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		8651065C2B0F92E90011B4A1 /* AuthDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataProvider.swift; sourceTree = "<group>"; };
 		8651065E2B0F93840011B4A1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		865106602B0F9A8A0011B4A1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		865106662B0F9FCD0011B4A1 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		865106682B0FA0320011B4A1 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 			children = (
 				865106012B0F877E0011B4A1 /* GymPulseApp.swift */,
 				865106202B0F8B830011B4A1 /* AppDelegate.swift */,
+				8651066A2B0FA1420011B4A1 /* Model */,
 				865106642B0F9DF60011B4A1 /* View */,
 				865106622B0F9DE00011B4A1 /* Services */,
 				865106632B0F9DE70011B4A1 /* DataProvider */,
@@ -174,9 +179,9 @@
 		865106642B0F9DF60011B4A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				865106032B0F877E0011B4A1 /* ContentView.swift */,
 				8651060F2B0F884A0011B4A1 /* LoginView.swift */,
 				865106602B0F9A8A0011B4A1 /* LoginViewModel.swift */,
-				865106032B0F877E0011B4A1 /* ContentView.swift */,
 				8651065E2B0F93840011B4A1 /* MainView.swift */,
 			);
 			path = View;
@@ -188,6 +193,15 @@
 				865106112B0F88760011B4A1 /* Assets+Enum.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8651066A2B0FA1420011B4A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				865106662B0F9FCD0011B4A1 /* Workout.swift */,
+				865106682B0FA0320011B4A1 /* Exercise.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,7 +317,9 @@
 				8651065B2B0F8E260011B4A1 /* FirestoreService.swift in Sources */,
 				865106102B0F884A0011B4A1 /* LoginView.swift in Sources */,
 				865106042B0F877E0011B4A1 /* ContentView.swift in Sources */,
+				865106692B0FA0320011B4A1 /* Exercise.swift in Sources */,
 				865106022B0F877E0011B4A1 /* GymPulseApp.swift in Sources */,
+				865106672B0F9FCD0011B4A1 /* Workout.swift in Sources */,
 				865106592B0F8D260011B4A1 /* AuthService.swift in Sources */,
 				865106212B0F8B830011B4A1 /* AppDelegate.swift in Sources */,
 				865106612B0F9A8A0011B4A1 /* LoginViewModel.swift in Sources */,

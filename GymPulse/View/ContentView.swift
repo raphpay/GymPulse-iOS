@@ -12,12 +12,10 @@ struct ContentView: View {
     @EnvironmentObject private var authDataProvider: AuthDataProvider
     
     var body: some View {
-        NavigationStack {
-            if authDataProvider.isLoggedIn {
-                MainView()
-            } else {
-                LoginView()
-            }
+        if authDataProvider.isLoggedIn {
+            MainView()
+        } else {
+            LoginView()
         }
     }
 }
