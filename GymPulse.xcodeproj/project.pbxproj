@@ -11,6 +11,8 @@
 		865106042B0F877E0011B4A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106032B0F877E0011B4A1 /* ContentView.swift */; };
 		865106062B0F87810011B4A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865106052B0F87810011B4A1 /* Assets.xcassets */; };
 		865106092B0F87810011B4A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865106082B0F87810011B4A1 /* Preview Assets.xcassets */; };
+		865106102B0F884A0011B4A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651060F2B0F884A0011B4A1 /* LoginView.swift */; };
+		865106122B0F88760011B4A1 /* Assets+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106112B0F88760011B4A1 /* Assets+Enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		865106032B0F877E0011B4A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		865106052B0F87810011B4A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		865106082B0F87810011B4A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8651060F2B0F884A0011B4A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		865106112B0F88760011B4A1 /* Assets+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+Enum.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				865106012B0F877E0011B4A1 /* GymPulseApp.swift */,
+				8651060F2B0F884A0011B4A1 /* LoginView.swift */,
 				865106032B0F877E0011B4A1 /* ContentView.swift */,
+				865106112B0F88760011B4A1 /* Assets+Enum.swift */,
 				865106052B0F87810011B4A1 /* Assets.xcassets */,
 				865106072B0F87810011B4A1 /* Preview Content */,
 			);
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865106102B0F884A0011B4A1 /* LoginView.swift in Sources */,
 				865106042B0F877E0011B4A1 /* ContentView.swift in Sources */,
 				865106022B0F877E0011B4A1 /* GymPulseApp.swift in Sources */,
+				865106122B0F88760011B4A1 /* Assets+Enum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
