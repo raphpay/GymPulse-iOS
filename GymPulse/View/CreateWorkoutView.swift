@@ -1,0 +1,52 @@
+//
+//  CreateWorkoutView.swift
+//  GymPulse
+//
+//  Created by Raphaël Payet on 23/11/2023.
+//
+
+import SwiftUI
+import SwiftData
+
+struct CreateWorkoutView: View {
+    
+    @Bindable var workout: Workout
+    // TODO: Connect these properties to the workout
+    @State private var minutes = 0
+    @State private var seconds = 0
+    
+    var body: some View {
+        VStack {
+            TextField("Workout Name", text: $workout.name)
+                .textFieldStyle(.roundedBorder)
+            
+            HStack {
+                Text("Break duration:")
+                Picker("Minutes", selection: $minutes) {
+                    ForEach(0..<11) { minute in
+                        Text("\(minute)min")
+                    }
+                }
+                
+                Picker("Seconds", selection: $seconds) {
+                    ForEach(0..<60) { second in
+                        Text("\(second)sec")
+                    }
+                }
+            }
+        }
+        .padding()
+    }
+}
+
+#Preview {
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Workout.self, configurations: config)
+        let example = Workout(name: "Workout Example", breakDurationInS: 150)
+        return CreateWorkoutView(workout: example)
+                                    .modelContainer(container)
+    } catch {
+        fatalError("Failed to create model container")
+    }
+}

@@ -24,8 +24,8 @@ struct MainView: View {
                     workoutList
                 }
             }
-            .navigationDestination(for: Workout.self) { _ in
-                EmptyView()
+            .navigationDestination(for: Workout.self) { workout in
+                CreateWorkoutView(workout: workout)
             }
             .navigationDestination(isPresented: $viewModel.showProfileView) {
                 ProfileView()
