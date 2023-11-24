@@ -11,6 +11,7 @@ import SwiftData
 struct WorkoutView: View {
     
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject private var globalState: GlobalState
     @Bindable var workout: Workout
     @StateObject private var viewModel = WorkoutViewModel()
     
@@ -33,17 +34,10 @@ struct WorkoutView: View {
                 Text(viewModel.nextButtonText)
             }
             .buttonStyle(.borderedProminent)
-            
-            Button {
-                viewModel.isTimerRunning = false
-            } label: {
-                Text("Stop timer")
-                    .tint(.red)
-            }
         }
         .navigationTitle(workout.name)
         .onAppear {
-            viewModel.setup(workout: workout, dismiss: dismiss)
+            viewModel.setup(workout: workout, dismiss: dismiss, globalState: globalState)
         }
         .onReceive(viewModel.timer) { _ in
             if viewModel.isTimerRunning {
@@ -52,6 +46,7 @@ struct WorkoutView: View {
                 } else {
                     viewModel.nextSeries()
                     viewModel.stopTimer()
+                    viewModel.playSound()
                 }
             }
         }

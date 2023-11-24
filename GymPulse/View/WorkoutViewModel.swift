@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 class WorkoutViewModel: ObservableObject {
     @Published var currentExerciseIndex = 0
@@ -14,8 +15,11 @@ class WorkoutViewModel: ObservableObject {
     @Published var timeRemaining: TimeInterval = 0
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
+    var player: AVAudioPlayer?
+    
     var workout: Workout?
     var dismiss: DismissAction?
+    var globalState: GlobalState?
     
     var currentExercise: Exercise {
         guard let workout = workout else { return Exercise.mock }
@@ -28,10 +32,11 @@ class WorkoutViewModel: ObservableObject {
         )
     }
     
-    func setup(workout: Workout, dismiss: DismissAction) {
+    func setup(workout: Workout, dismiss: DismissAction, globalState: GlobalState) {
         self.workout = workout
         self.dismiss = dismiss
         self.timeRemaining = workout.breakDurationInS
+        self.globalState = globalState
     }
     
     func nextSeries() {
@@ -66,5 +71,32 @@ class WorkoutViewModel: ObservableObject {
     
     private func finishWorkout() {
         dismiss?()
+    }
+    
+    func playSound() {
+        guard let ringtoneID = globalState?.ringtone.id,
+              let url = Bundle.main.url(forResource: ringtoneID, withExtension: "wav") else { return }
+
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+
+            /* iOS 10 and earlier require the following line:
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+
+            guard let player = player else { return }
+            
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func playRingtone() {
+        let systemSoundID: SystemSoundID = 1013
+        AudioServicesPlaySystemSound(systemSoundID)
     }
 }
