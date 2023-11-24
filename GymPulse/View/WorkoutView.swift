@@ -13,8 +13,13 @@ struct WorkoutView: View {
     @Bindable var workout: Workout
     
     var body: some View {
-        Text(workout.name)
-        Text("\(workout.breakDurationInS)")
+        VStack {
+            Text(workout.name)
+            Text("\(workout.breakDurationInS)")
+            ForEach(workout.exercises) { exercise in
+                Text(exercise.name)
+            }
+        }
     }
 }
 

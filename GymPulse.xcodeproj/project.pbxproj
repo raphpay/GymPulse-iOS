@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8625129B2B108A48001930B9 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625129A2B108A48001930B9 /* AddExerciseView.swift */; };
 		865106022B0F877E0011B4A1 /* GymPulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106012B0F877E0011B4A1 /* GymPulseApp.swift */; };
 		865106042B0F877E0011B4A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106032B0F877E0011B4A1 /* ContentView.swift */; };
 		865106062B0F87810011B4A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865106052B0F87810011B4A1 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8625129A2B108A48001930B9 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
 		865105FE2B0F877E0011B4A1 /* GymPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		865106012B0F877E0011B4A1 /* GymPulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymPulseApp.swift; sourceTree = "<group>"; };
 		865106032B0F877E0011B4A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				8651066D2B0FA6680011B4A1 /* MainViewModel.swift */,
 				8651066B2B0FA54C0011B4A1 /* ProfileView.swift */,
 				8651066F2B0FA74B0011B4A1 /* CreateWorkoutView.swift */,
+				8625129A2B108A48001930B9 /* AddExerciseView.swift */,
 				865106712B0FAAC20011B4A1 /* WorkoutView.swift */,
 			);
 			path = View;
@@ -330,6 +333,7 @@
 				8651065F2B0F93840011B4A1 /* MainView.swift in Sources */,
 				8651065B2B0F8E260011B4A1 /* FirestoreService.swift in Sources */,
 				865106102B0F884A0011B4A1 /* LoginView.swift in Sources */,
+				8625129B2B108A48001930B9 /* AddExerciseView.swift in Sources */,
 				865106042B0F877E0011B4A1 /* ContentView.swift in Sources */,
 				865106692B0FA0320011B4A1 /* Exercise.swift in Sources */,
 				8651066E2B0FA6680011B4A1 /* MainViewModel.swift in Sources */,

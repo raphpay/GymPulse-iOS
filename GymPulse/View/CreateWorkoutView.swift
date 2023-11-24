@@ -11,39 +11,63 @@ import SwiftData
 struct CreateWorkoutView: View {
     
     @Bindable var workout: Workout
-    // TODO: Connect these properties to the workout
     @State private var minutes = 0
     @State private var seconds = 0
+    @State private var showExerciseAlert = false
+    @State private var alertWidth: CGFloat = 0.0
+    @State private var alertHeight: CGFloat = 0.0
     
     var body: some View {
-        VStack {
-            TextField("Workout Name", text: $workout.name)
-                .textFieldStyle(.roundedBorder)
-            
-            HStack {
-                Text("Break duration:")
-                Picker("Minutes", selection: $minutes) {
-                    ForEach(0..<11) { minute in
-                        Text("\(minute)min")
+        ZStack {
+            VStack {
+                TextField("Workout Name", text: $workout.name)
+                    .textFieldStyle(.roundedBorder)
+                
+                HStack {
+                    Text("Break duration:")
+                    Picker("Minutes", selection: $minutes) {
+                        ForEach(0..<11) { minute in
+                            Text("\(minute)min")
+                        }
                     }
-                }
-                .onChange(of: minutes) { _, _ in
-                    updateWorkoutDuration()
+                    .onChange(of: minutes) { _, _ in
+                        updateWorkoutDuration()
+                    }
+                    
+                    Picker("Seconds", selection: $seconds) {
+                        ForEach(0..<60) { second in
+                            Text("\(second)sec")
+                        }
+                    }
+                    .onChange(of: seconds) { _, _ in
+                        updateWorkoutDuration()
+                    }
                 }
                 
-                Picker("Seconds", selection: $seconds) {
-                    ForEach(0..<60) { second in
-                        Text("\(second)sec")
+                ForEach(workout.exercises) { exercise in
+                    Text(exercise.name)
+                }
+                
+                Button {
+                    withAnimation {
+                        showExerciseAlert = true
+                        alertWidth = UIScreen.main.bounds.width - 36
+                        alertHeight = 350
                     }
+                } label: {
+                    Text("Add exercise")
                 }
-                .onChange(of: seconds) { _, _ in
-                    updateWorkoutDuration()
-                }
+                .buttonStyle(.borderedProminent)
             }
-        }
-        .padding()
-        .onAppear {
-            updatePickersFromWorkoutDuration()
+            .padding()
+            .onAppear {
+                updatePickersFromWorkoutDuration()
+            }
+            
+            if showExerciseAlert {
+                AddExerciseView(workout: workout, showExerciseAlert: $showExerciseAlert,
+                                alertWidth: $alertWidth, alertHeight: $alertHeight)
+            }
         }
     }
     

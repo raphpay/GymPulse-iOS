@@ -23,3 +23,21 @@ class Exercise: Identifiable {
         self.weight = weight
     }
 }
+
+enum ExerciseOption: String, CaseIterable {
+    case classicSquat = "Classic Squat"
+    case deadlift = "Deadlift"
+    case benchPress = "Bench-Press"
+    case barbellBackSquat = "Barbell Back Squat"
+    case bodyweightSquat = "Bodyweight Squat"
+    case gobletSquat = "Goblet Squat"
+    case frontSquat = "Front Squat"
+    case sumoSquat = "Sumo Squat"
+    case conventionalDeadlift = "Conventional Deadlift"
+    case romanianDeadlift = "Romanian Deadlift"
+    case sumoDeadlift = "Sumo Deadlift"
+    case trapBarDeadlift = "Trap Bar Deadlift"
+    case singleLegDeadlift = "Single-Leg Deadlift"
+    
+    // Add more exercises following the same pattern
+}
