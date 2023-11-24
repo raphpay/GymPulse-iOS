@@ -6,32 +6,85 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainView: View {
     
+    @Environment(\.modelContext) var modelContext
     @EnvironmentObject private var authDataProvider: AuthDataProvider
+    @Query var workouts: [Workout]
+    @StateObject private var viewModel = MainViewModel()
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Main")
-            Button {
-                let result = AuthService.shared.signOut()
-                switch result {
-                case .success( _):
-                    authDataProvider.isLoggedIn = false
-                    authDataProvider.currentUser = nil
-                case .failure(let error):
-                    print(error.localizedDescription)
+        NavigationStack(path: $viewModel.path) {
+            VStack {
+                if workouts.isEmpty {
+                    emptyView
+                } else {
+                    workoutList
                 }
-            } label: {
-                Text("Sign out")
             }
-
+            .navigationDestination(for: Workout.self) { workout in
+                CreateWorkoutView(workout: workout)
+            }
+            .navigationDestination(isPresented: $viewModel.showProfileView) {
+                ProfileView()
+            }
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        viewModel.showProfileView = true
+                    } label: {
+                        Image(systemName: "person.fill")
+                    }
+                }
+                
+                if !workouts.isEmpty {
+                    ToolbarItem {
+                        Button {
+                            viewModel.createWorkout(modelContext)
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
+            }
         }
-        .padding()
+    }
+    
+    var emptyView: some View {
+        ContentUnavailableView(label: {
+            Label("No Workouts", systemImage: "dumbbell")
+        }, description: {
+            Text("Start creating a workout to use the app")
+        }, actions: {
+            Button {
+                viewModel.createWorkout(modelContext)
+            } label: {
+                Text("Create")
+            }
+            .buttonStyle(.bordered)
+        })
+    }
+    
+    var workoutList: some View {
+        VStack {
+            ForEach(workouts) { workout in
+                NavigationLink {
+                    WorkoutView(workout: workout)
+                } label: {
+                    Text(workout.name)
+                }
+
+            }
+            
+            Button {
+                viewModel.clearWorkouts(modelContext)
+            } label: {
+                Text("Clear")
+            }
+            .buttonStyle(.bordered)
+        }
     }
 }
 

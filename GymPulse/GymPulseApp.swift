@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 import FirebaseAuth
 
 @main
@@ -17,6 +18,7 @@ struct GymPulseApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: Workout.self)
                 .environmentObject(authDataProvider)
                 .onAppear {
                     authDataProvider.checkUserStatus()
