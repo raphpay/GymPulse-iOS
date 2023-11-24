@@ -25,8 +25,7 @@ struct MainView: View {
                 }
             }
             .onAppear {
-                // TODO: Find a way to pass authdataprovider to the viewmodel
-                viewModel.filterWorkouts(workouts: workouts, currentUser: authDataProvider.currentUser)
+                viewModel.setup(authDataProvider, workouts: workouts)
             }
             .navigationDestination(for: Workout.self) { workout in
                 CreateWorkoutView(workout: workout)
@@ -46,7 +45,7 @@ struct MainView: View {
                 if !workouts.isEmpty {
                     ToolbarItem {
                         Button {
-                            viewModel.createWorkout(modelContext, currentUser: authDataProvider.currentUser)
+                            viewModel.createWorkout(modelContext)
                         } label: {
                             Image(systemName: "plus")
                         }
@@ -63,7 +62,7 @@ struct MainView: View {
             Text("Start creating a workout to use the app")
         }, actions: {
             Button {
-                viewModel.createWorkout(modelContext, currentUser: authDataProvider.currentUser)
+                viewModel.createWorkout(modelContext)
             } label: {
                 Text("Create")
             }
@@ -83,7 +82,7 @@ struct MainView: View {
             }
             
             Button {
-                viewModel.clearWorkouts(modelContext, currentUser: authDataProvider.currentUser)
+                viewModel.clearWorkouts(modelContext)
             } label: {
                 Text("Clear")
             }
