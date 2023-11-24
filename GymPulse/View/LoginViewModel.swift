@@ -13,14 +13,20 @@ class LoginViewModel: ObservableObject {
     @Published var password = ""
     
     func login(authDataProvider: AuthDataProvider) async {
-        let isAvailable = await FirestoreService.shared.checkUserAvailability(email: email)
-        if isAvailable {
-            await FirestoreService.shared.createUser(email: email)
-            let result = await AuthService.shared.createUser(email, password: password)
-            handleResult(result, authDataProvider: authDataProvider)
-        } else {
-            let result = await AuthService.shared.signIn(email, password: password)
-            handleResult(result, authDataProvider: authDataProvider)
+        let firestoreService = FirestoreDatabaseService.shared.service
+        let authService = AuthenticationService.shared.service
+        do {
+            let isAvailable = try await firestoreService.checkUserAvailability(email: email)
+            if isAvailable {
+                try await firestoreService.createUser(email: email)
+                let result = try await authService.createUser(email, password: password)
+                handleResult(result, authDataProvider: authDataProvider)
+            } else {
+                let result = try await authService.signIn(email, password: password)
+                handleResult(result, authDataProvider: authDataProvider)
+            }
+        } catch let error {
+            print(error)
         }
     }
     

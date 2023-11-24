@@ -34,7 +34,7 @@ struct ProfileView: View {
 
         
         Button {
-            let result = AuthService.shared.signOut()
+            let result = AuthenticationService.shared.service.signOut()
             switch result {
             case .success( _):
                 authDataProvider.isLoggedIn = false

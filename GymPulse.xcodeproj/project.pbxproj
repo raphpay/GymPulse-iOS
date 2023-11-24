@@ -17,6 +17,7 @@
 		862512AC2B10D7C6001930B9 /* happy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 862512A82B10D7C5001930B9 /* happy.wav */; };
 		862512AD2B10D7C6001930B9 /* simple.wav in Resources */ = {isa = PBXBuildFile; fileRef = 862512A92B10D7C5001930B9 /* simple.wav */; };
 		862512AF2B10D939001930B9 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862512AE2B10D939001930B9 /* GlobalState.swift */; };
+		862512B72B10DDF8001930B9 /* GymPulseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862512B62B10DDF8001930B9 /* GymPulseTests.swift */; };
 		865106022B0F877E0011B4A1 /* GymPulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106012B0F877E0011B4A1 /* GymPulseApp.swift */; };
 		865106042B0F877E0011B4A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106032B0F877E0011B4A1 /* ContentView.swift */; };
 		865106062B0F87810011B4A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865106052B0F87810011B4A1 /* Assets.xcassets */; };
@@ -70,6 +71,16 @@
 		865106722B0FAAC20011B4A1 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106712B0FAAC20011B4A1 /* WorkoutView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		862512B82B10DDF8001930B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 865105F62B0F877E0011B4A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 865105FD2B0F877E0011B4A1;
+			remoteInfo = GymPulse;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		8625129A2B108A48001930B9 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
 		8625129C2B10977B001930B9 /* AddExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewModel.swift; sourceTree = "<group>"; };
@@ -81,6 +92,8 @@
 		862512A82B10D7C5001930B9 /* happy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = happy.wav; sourceTree = "<group>"; };
 		862512A92B10D7C5001930B9 /* simple.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = simple.wav; sourceTree = "<group>"; };
 		862512AE2B10D939001930B9 /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
+		862512B42B10DDF8001930B9 /* GymPulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymPulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		862512B62B10DDF8001930B9 /* GymPulseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymPulseTests.swift; sourceTree = "<group>"; };
 		865105FE2B0F877E0011B4A1 /* GymPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		865106012B0F877E0011B4A1 /* GymPulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymPulseApp.swift; sourceTree = "<group>"; };
 		865106032B0F877E0011B4A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +117,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		862512B12B10DDF8001930B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		865105FB2B0F877E0011B4A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,10 +166,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		862512B52B10DDF8001930B9 /* GymPulseTests */ = {
+			isa = PBXGroup;
+			children = (
+				862512B62B10DDF8001930B9 /* GymPulseTests.swift */,
+			);
+			path = GymPulseTests;
+			sourceTree = "<group>";
+		};
 		865105F52B0F877E0011B4A1 = {
 			isa = PBXGroup;
 			children = (
 				865106002B0F877E0011B4A1 /* GymPulse */,
+				862512B52B10DDF8001930B9 /* GymPulseTests */,
 				865105FF2B0F877E0011B4A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -158,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				865105FE2B0F877E0011B4A1 /* GymPulse.app */,
+				862512B42B10DDF8001930B9 /* GymPulseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,6 +279,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		862512B32B10DDF8001930B9 /* GymPulseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 862512BC2B10DDF8001930B9 /* Build configuration list for PBXNativeTarget "GymPulseTests" */;
+			buildPhases = (
+				862512B02B10DDF8001930B9 /* Sources */,
+				862512B12B10DDF8001930B9 /* Frameworks */,
+				862512B22B10DDF8001930B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				862512B92B10DDF8001930B9 /* PBXTargetDependency */,
+			);
+			name = GymPulseTests;
+			productName = GymPulseTests;
+			productReference = 862512B42B10DDF8001930B9 /* GymPulseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		865105FD2B0F877E0011B4A1 /* GymPulse */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8651060C2B0F87810011B4A1 /* Build configuration list for PBXNativeTarget "GymPulse" */;
@@ -310,6 +358,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					862512B32B10DDF8001930B9 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 865105FD2B0F877E0011B4A1;
+					};
 					865105FD2B0F877E0011B4A1 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -332,11 +384,19 @@
 			projectRoot = "";
 			targets = (
 				865105FD2B0F877E0011B4A1 /* GymPulse */,
+				862512B32B10DDF8001930B9 /* GymPulseTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		862512B22B10DDF8001930B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		865105FC2B0F877E0011B4A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +414,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		862512B02B10DDF8001930B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862512B72B10DDF8001930B9 /* GymPulseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		865105FA2B0F877E0011B4A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,7 +453,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		862512B92B10DDF8001930B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 865105FD2B0F877E0011B4A1 /* GymPulse */;
+			targetProxy = 862512B82B10DDF8001930B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		862512BA2B10DDF8001930B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N96T5K2D2H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.twinPaw.GymPulseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GymPulse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GymPulse";
+			};
+			name = Debug;
+		};
+		862512BB2B10DDF8001930B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N96T5K2D2H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.twinPaw.GymPulseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GymPulse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GymPulse";
+			};
+			name = Release;
+		};
 		8651060A2B0F87810011B4A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -566,6 +678,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		862512BC2B10DDF8001930B9 /* Build configuration list for PBXNativeTarget "GymPulseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				862512BA2B10DDF8001930B9 /* Debug */,
+				862512BB2B10DDF8001930B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		865105F92B0F877E0011B4A1 /* Build configuration list for PBXProject "GymPulse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
