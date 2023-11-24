@@ -88,7 +88,8 @@ struct CreateWorkoutView: View {
         let container = try ModelContainer(for: Workout.self, configurations: config)
         let exampleExercise = Exercise(name: ExerciseOption.classicSquat.rawValue,
                                        seriesCount: 3, repCount: 3, weight: 50)
-        let example = Workout(name: "Workout Example",
+        let example = Workout(ownerID: "TestOwner",
+                              name: "Workout Example",
                               breakDurationInS: 150,
                               exercises: [exampleExercise])
         

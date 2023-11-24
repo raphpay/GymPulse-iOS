@@ -18,11 +18,14 @@ struct MainView: View {
     var body: some View {
         NavigationStack(path: $viewModel.path) {
             VStack {
-                if workouts.isEmpty {
+                if viewModel.filteredWorkouts.isEmpty {
                     emptyView
                 } else {
                     workoutList
                 }
+            }
+            .onAppear {
+                viewModel.setup(authDataProvider, workouts: workouts)
             }
             .navigationDestination(for: Workout.self) { workout in
                 CreateWorkoutView(workout: workout)
@@ -69,7 +72,7 @@ struct MainView: View {
     
     var workoutList: some View {
         VStack {
-            ForEach(workouts) { workout in
+            ForEach(viewModel.filteredWorkouts) { workout in
                 NavigationLink {
                     WorkoutView(workout: workout)
                 } label: {
