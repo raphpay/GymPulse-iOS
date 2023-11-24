@@ -40,8 +40,20 @@ struct CreateWorkoutView: View {
                     }
                 }
                 
-                ForEach(workout.exercises) { exercise in
-                    Text(exercise.name)
+                ForEach(0..<workout.exercises.count, id: \.self) { index in
+                    let exercise = workout.exercises[index]
+                    
+                    HStack {
+                        Spacer()
+                        Text(exercise.name)
+                        Spacer()
+                        Button {
+                            workout.exercises.remove(at: index)
+                        } label: {
+                            Image(systemName: "trash")
+                                .tint(.red)
+                        }
+                    }
                 }
                 
                 Button {
@@ -74,7 +86,12 @@ struct CreateWorkoutView: View {
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Workout.self, configurations: config)
-        let example = Workout(name: "Workout Example", breakDurationInS: 150)
+        let exampleExercise = Exercise(name: ExerciseOption.classicSquat.rawValue,
+                                       seriesCount: 3, repCount: 3, weight: 50)
+        let example = Workout(name: "Workout Example",
+                              breakDurationInS: 150,
+                              exercises: [exampleExercise])
+        
         return CreateWorkoutView(workout: example)
                                     .modelContainer(container)
     } catch {
