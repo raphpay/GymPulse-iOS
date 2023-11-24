@@ -11,6 +11,12 @@
 		8625129D2B10977B001930B9 /* AddExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625129C2B10977B001930B9 /* AddExerciseViewModel.swift */; };
 		8625129F2B109A31001930B9 /* CreateWorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625129E2B109A31001930B9 /* CreateWorkoutViewModel.swift */; };
 		862512A12B10AF03001930B9 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862512A02B10AF03001930B9 /* WorkoutViewModel.swift */; };
+		862512A52B10D2F2001930B9 /* Ringtone+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862512A42B10D2F2001930B9 /* Ringtone+Enum.swift */; };
+		862512AA2B10D7C6001930B9 /* retro.wav in Resources */ = {isa = PBXBuildFile; fileRef = 862512A62B10D7C5001930B9 /* retro.wav */; };
+		862512AB2B10D7C6001930B9 /* alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 862512A72B10D7C5001930B9 /* alert.wav */; };
+		862512AC2B10D7C6001930B9 /* happy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 862512A82B10D7C5001930B9 /* happy.wav */; };
+		862512AD2B10D7C6001930B9 /* simple.wav in Resources */ = {isa = PBXBuildFile; fileRef = 862512A92B10D7C5001930B9 /* simple.wav */; };
+		862512AF2B10D939001930B9 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862512AE2B10D939001930B9 /* GlobalState.swift */; };
 		865106022B0F877E0011B4A1 /* GymPulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106012B0F877E0011B4A1 /* GymPulseApp.swift */; };
 		865106042B0F877E0011B4A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106032B0F877E0011B4A1 /* ContentView.swift */; };
 		865106062B0F87810011B4A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865106052B0F87810011B4A1 /* Assets.xcassets */; };
@@ -69,6 +75,12 @@
 		8625129C2B10977B001930B9 /* AddExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewModel.swift; sourceTree = "<group>"; };
 		8625129E2B109A31001930B9 /* CreateWorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutViewModel.swift; sourceTree = "<group>"; };
 		862512A02B10AF03001930B9 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
+		862512A42B10D2F2001930B9 /* Ringtone+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ringtone+Enum.swift"; sourceTree = "<group>"; };
+		862512A62B10D7C5001930B9 /* retro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = retro.wav; sourceTree = "<group>"; };
+		862512A72B10D7C5001930B9 /* alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alert.wav; sourceTree = "<group>"; };
+		862512A82B10D7C5001930B9 /* happy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = happy.wav; sourceTree = "<group>"; };
+		862512A92B10D7C5001930B9 /* simple.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = simple.wav; sourceTree = "<group>"; };
+		862512AE2B10D939001930B9 /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		865105FE2B0F877E0011B4A1 /* GymPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		865106012B0F877E0011B4A1 /* GymPulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymPulseApp.swift; sourceTree = "<group>"; };
 		865106032B0F877E0011B4A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -161,6 +173,10 @@
 				865106632B0F9DE70011B4A1 /* DataProvider */,
 				865106652B0F9E000011B4A1 /* Utils */,
 				865106052B0F87810011B4A1 /* Assets.xcassets */,
+				862512A72B10D7C5001930B9 /* alert.wav */,
+				862512A82B10D7C5001930B9 /* happy.wav */,
+				862512A62B10D7C5001930B9 /* retro.wav */,
+				862512A92B10D7C5001930B9 /* simple.wav */,
 				865106132B0F8B6D0011B4A1 /* GoogleService-Info.plist */,
 				865106072B0F87810011B4A1 /* Preview Content */,
 			);
@@ -188,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				8651065C2B0F92E90011B4A1 /* AuthDataProvider.swift */,
+				862512AE2B10D939001930B9 /* GlobalState.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -215,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				865106112B0F88760011B4A1 /* Assets+Enum.swift */,
+				862512A42B10D2F2001930B9 /* Ringtone+Enum.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -324,8 +342,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				865106092B0F87810011B4A1 /* Preview Assets.xcassets in Resources */,
+				862512AD2B10D7C6001930B9 /* simple.wav in Resources */,
+				862512AB2B10D7C6001930B9 /* alert.wav in Resources */,
+				862512AA2B10D7C6001930B9 /* retro.wav in Resources */,
 				865106062B0F87810011B4A1 /* Assets.xcassets in Resources */,
 				865106142B0F8B6D0011B4A1 /* GoogleService-Info.plist in Resources */,
+				862512AC2B10D7C6001930B9 /* happy.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +368,7 @@
 				865106102B0F884A0011B4A1 /* LoginView.swift in Sources */,
 				8625129B2B108A48001930B9 /* AddExerciseView.swift in Sources */,
 				865106042B0F877E0011B4A1 /* ContentView.swift in Sources */,
+				862512A52B10D2F2001930B9 /* Ringtone+Enum.swift in Sources */,
 				865106692B0FA0320011B4A1 /* Exercise.swift in Sources */,
 				8651066E2B0FA6680011B4A1 /* MainViewModel.swift in Sources */,
 				865106022B0F877E0011B4A1 /* GymPulseApp.swift in Sources */,
@@ -353,6 +376,7 @@
 				865106672B0F9FCD0011B4A1 /* Workout.swift in Sources */,
 				865106592B0F8D260011B4A1 /* AuthService.swift in Sources */,
 				865106212B0F8B830011B4A1 /* AppDelegate.swift in Sources */,
+				862512AF2B10D939001930B9 /* GlobalState.swift in Sources */,
 				865106702B0FA74B0011B4A1 /* CreateWorkoutView.swift in Sources */,
 				865106612B0F9A8A0011B4A1 /* LoginViewModel.swift in Sources */,
 				865106122B0F88760011B4A1 /* Assets+Enum.swift in Sources */,
