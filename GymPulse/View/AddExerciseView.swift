@@ -14,13 +14,7 @@ struct AddExerciseView: View {
     @Binding var showExerciseAlert: Bool
     @Binding var alertWidth: CGFloat
     @Binding var alertHeight: CGFloat
-    @State private var selectedExerciseOption = ExerciseOption.classicSquat
-    @State private var repsCount = 2
-    @State private var seriesCount = 3
-    @State private var weight = 50.0
-    
-    private let minimumWeight = 0.0
-    private let maximumWeight = 200.0
+    @StateObject private var viewModel = AddExerciseViewModel()
     
     var body: some View {
         ZStack {
@@ -32,31 +26,31 @@ struct AddExerciseView: View {
             VStack {
                 Text(workout.name)
                 
-                Picker("Please choose a color", selection: $selectedExerciseOption) {
+                Picker("Please choose a color", selection: $viewModel.selectedExerciseOption) {
                     ForEach(ExerciseOption.allCases, id: \.self) {
                         Text($0.rawValue)
                     }
                 }
                 
-                Stepper("Number of reps: \(repsCount)", value: $repsCount)
-                Stepper("Number of series: \(seriesCount)", value: $seriesCount)
+                Stepper("Number of reps: \(viewModel.repsCount)", value: $viewModel.repsCount)
+                Stepper("Number of series: \(viewModel.seriesCount)", value: $viewModel.seriesCount)
                 
                 HStack {
                     Button {
-                        weight -= 0.5
+                        viewModel.weight -= 0.5
                     } label: {
                         Image(systemName: "minus")
                     }
-                    Slider(value: $weight, in: minimumWeight...maximumWeight,
+                    Slider(value: $viewModel.weight, in: viewModel.minimumWeight...viewModel.maximumWeight,
                            step: 0.5) {
                         Text("Weight")
                     } minimumValueLabel: {
-                        Text("\(Int(minimumWeight))")
+                        Text("\(Int(viewModel.minimumWeight))")
                     } maximumValueLabel: {
-                        Text("\(Int(maximumWeight))")
+                        Text("\(Int(viewModel.maximumWeight))")
                     }
                     Button {
-                        weight += 0.5
+                        viewModel.weight += 0.5
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -64,15 +58,14 @@ struct AddExerciseView: View {
                 
                 HStack(alignment: .center) {
                     Spacer()
-                    Text("\(weight, specifier: "%.1f")")
+                    Text("\(viewModel.weight, specifier: "%.1f")")
                     Spacer()
                 }
                 
                 Spacer()
                 
                 Button {
-                    let exercise = Exercise(name: selectedExerciseOption.rawValue, seriesCount: seriesCount, repCount: repsCount, weight: weight)
-                    workout.exercises.append(exercise)
+                    viewModel.saveWorkout(workout: workout)
                     hideAlert()
                 } label: {
                     Text("Add Exercise")
@@ -92,7 +85,7 @@ struct AddExerciseView: View {
     
     private func hideAlert() {
         withAnimation {
-            showExerciseAlert = false
+            self.showExerciseAlert = false
         }
     }
 }
