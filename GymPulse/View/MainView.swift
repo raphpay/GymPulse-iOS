@@ -18,11 +18,15 @@ struct MainView: View {
     var body: some View {
         NavigationStack(path: $viewModel.path) {
             VStack {
-                if workouts.isEmpty {
+                if viewModel.filteredWorkouts.isEmpty {
                     emptyView
                 } else {
                     workoutList
                 }
+            }
+            .onAppear {
+                // TODO: Find a way to pass authdataprovider to the viewmodel
+                viewModel.filterWorkouts(workouts: workouts, currentUser: authDataProvider.currentUser)
             }
             .navigationDestination(for: Workout.self) { workout in
                 CreateWorkoutView(workout: workout)
@@ -42,7 +46,7 @@ struct MainView: View {
                 if !workouts.isEmpty {
                     ToolbarItem {
                         Button {
-                            viewModel.createWorkout(modelContext)
+                            viewModel.createWorkout(modelContext, currentUser: authDataProvider.currentUser)
                         } label: {
                             Image(systemName: "plus")
                         }
@@ -59,7 +63,7 @@ struct MainView: View {
             Text("Start creating a workout to use the app")
         }, actions: {
             Button {
-                viewModel.createWorkout(modelContext)
+                viewModel.createWorkout(modelContext, currentUser: authDataProvider.currentUser)
             } label: {
                 Text("Create")
             }
@@ -69,7 +73,7 @@ struct MainView: View {
     
     var workoutList: some View {
         VStack {
-            ForEach(workouts) { workout in
+            ForEach(viewModel.filteredWorkouts) { workout in
                 NavigationLink {
                     WorkoutView(workout: workout)
                 } label: {
@@ -79,7 +83,7 @@ struct MainView: View {
             }
             
             Button {
-                viewModel.clearWorkouts(modelContext)
+                viewModel.clearWorkouts(modelContext, currentUser: authDataProvider.currentUser)
             } label: {
                 Text("Clear")
             }
