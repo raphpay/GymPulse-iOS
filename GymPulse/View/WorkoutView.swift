@@ -12,61 +12,49 @@ struct WorkoutView: View {
     
     @Environment(\.dismiss) var dismiss
     @Bindable var workout: Workout
-    @State private var currentExerciseIndex = 0
-    @State private var currentSeries = 1
-    
-    var currentExercise: Exercise {
-        workout.exercises[currentExerciseIndex]
-    }
-    var nextButtonText: String {
-        currentSeries < currentExercise.seriesCount ? "Next Series" : (
-            currentExerciseIndex + 1 < workout.exercises.count ? "Next Exercise" : "Finish Workout"
-        )
-    }
+    @StateObject private var viewModel = WorkoutViewModel()
     
     var body: some View {
         VStack {
             ForEach(workout.exercises) { exercise in
-                let isCurrentExercise = currentExercise.id == exercise.id
+                let isCurrentExercise = viewModel.currentExercise.id == exercise.id
                 
                 Text(exercise.name)
                     .font(isCurrentExercise ? .title : .body)
                     .fontWeight(isCurrentExercise ? .bold : .regular)
             }
             
-            Text("\(currentSeries) / \(currentExercise.seriesCount)")
+            Text("\(viewModel.currentSeries) / \(viewModel.currentExercise.seriesCount)")
+            Text("\(viewModel.timeRemaining)")
             
             Button {
-                nextSeries()
+                viewModel.startTimer()
             } label: {
-                Text(nextButtonText)
+                Text(viewModel.nextButtonText)
             }
             .buttonStyle(.borderedProminent)
+            
+            Button {
+                viewModel.isTimerRunning = false
+            } label: {
+                Text("Stop timer")
+                    .tint(.red)
+            }
         }
         .navigationTitle(workout.name)
-    }
-    
-    func nextSeries() {
-        if currentSeries < currentExercise.seriesCount {
-            currentSeries += 1
-        } else {
-            nextExercise()
+        .onAppear {
+            viewModel.setup(workout: workout, dismiss: dismiss)
         }
-    }
-    
-    func nextExercise() {
-        if currentExerciseIndex + 1 < workout.exercises.count {
-            withAnimation {
-                self.currentExerciseIndex += 1
-                self.currentSeries = 1
+        .onReceive(viewModel.timer) { _ in
+            if viewModel.isTimerRunning {
+                if viewModel.timeRemaining > 0 {
+                    viewModel.timeRemaining -= 1
+                } else {
+                    viewModel.nextSeries()
+                    viewModel.stopTimer()
+                }
             }
-        } else {
-            finishWorkout()
         }
-    }
-    
-    func finishWorkout() {
-        dismiss()
     }
 }
 
