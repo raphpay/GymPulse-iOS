@@ -11,11 +11,7 @@ import SwiftData
 struct CreateWorkoutView: View {
     
     @Bindable var workout: Workout
-    @State private var minutes = 0
-    @State private var seconds = 0
-    @State private var showExerciseAlert = false
-    @State private var alertWidth: CGFloat = 0.0
-    @State private var alertHeight: CGFloat = 0.0
+    @StateObject private var viewModel = CreateWorkoutViewModel()
     
     var body: some View {
         ZStack {
@@ -25,22 +21,22 @@ struct CreateWorkoutView: View {
                 
                 HStack {
                     Text("Break duration:")
-                    Picker("Minutes", selection: $minutes) {
+                    Picker("Minutes", selection: $viewModel.minutes) {
                         ForEach(0..<11) { minute in
                             Text("\(minute)min")
                         }
                     }
-                    .onChange(of: minutes) { _, _ in
-                        updateWorkoutDuration()
+                    .onChange(of: viewModel.minutes) { _, _ in
+                        viewModel.updateWorkoutDuration(workout: workout)
                     }
                     
-                    Picker("Seconds", selection: $seconds) {
+                    Picker("Seconds", selection: $viewModel.seconds) {
                         ForEach(0..<60) { second in
                             Text("\(second)sec")
                         }
                     }
-                    .onChange(of: seconds) { _, _ in
-                        updateWorkoutDuration()
+                    .onChange(of: viewModel.seconds) { _, _ in
+                        viewModel.updateWorkoutDuration(workout: workout)
                     }
                 }
                 
@@ -50,9 +46,9 @@ struct CreateWorkoutView: View {
                 
                 Button {
                     withAnimation {
-                        showExerciseAlert = true
-                        alertWidth = UIScreen.main.bounds.width - 36
-                        alertHeight = 350
+                        viewModel.showExerciseAlert = true
+                        viewModel.alertWidth = UIScreen.main.bounds.width - 36
+                        viewModel.alertHeight = 350
                     }
                 } label: {
                     Text("Add exercise")
@@ -61,25 +57,16 @@ struct CreateWorkoutView: View {
             }
             .padding()
             .onAppear {
-                updatePickersFromWorkoutDuration()
+                viewModel.updatePickersFromWorkoutDuration(workout: workout)
             }
             
-            if showExerciseAlert {
-                AddExerciseView(workout: workout, showExerciseAlert: $showExerciseAlert,
-                                alertWidth: $alertWidth, alertHeight: $alertHeight)
+            if viewModel.showExerciseAlert {
+                AddExerciseView(workout: workout,
+                                showExerciseAlert: $viewModel.showExerciseAlert,
+                                alertWidth: $viewModel.alertWidth,
+                                alertHeight: $viewModel.alertHeight)
             }
         }
-    }
-    
-    func updatePickersFromWorkoutDuration() {
-        let totalSeconds = Int(workout.breakDurationInS)
-        minutes = totalSeconds / 60
-        seconds = totalSeconds % 60
-    }
-    
-    func updateWorkoutDuration() {
-        let totalSeconds = minutes * 60 + seconds
-        workout.breakDurationInS = Double(totalSeconds)
     }
 }
 
