@@ -22,6 +22,8 @@ class Exercise: Identifiable {
         self.repCount = repCount
         self.weight = weight
     }
+    
+    static let mock = Exercise(name: "Mock", seriesCount: 0, repCount: 0, weight: 0)
 }
 
 enum ExerciseOption: String, CaseIterable {
