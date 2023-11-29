@@ -17,7 +17,7 @@
 		862512AC2B10D7C6001930B9 /* happy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 862512A82B10D7C5001930B9 /* happy.wav */; };
 		862512AD2B10D7C6001930B9 /* simple.wav in Resources */ = {isa = PBXBuildFile; fileRef = 862512A92B10D7C5001930B9 /* simple.wav */; };
 		862512AF2B10D939001930B9 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862512AE2B10D939001930B9 /* GlobalState.swift */; };
-		862512B72B10DDF8001930B9 /* GymPulseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862512B62B10DDF8001930B9 /* GymPulseTests.swift */; };
+		862512BE2B10E45F001930B9 /* FirestoreServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862512BD2B10E45F001930B9 /* FirestoreServiceTests.swift */; };
 		865106022B0F877E0011B4A1 /* GymPulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106012B0F877E0011B4A1 /* GymPulseApp.swift */; };
 		865106042B0F877E0011B4A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106032B0F877E0011B4A1 /* ContentView.swift */; };
 		865106062B0F87810011B4A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 865106052B0F87810011B4A1 /* Assets.xcassets */; };
@@ -93,7 +93,7 @@
 		862512A92B10D7C5001930B9 /* simple.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = simple.wav; sourceTree = "<group>"; };
 		862512AE2B10D939001930B9 /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		862512B42B10DDF8001930B9 /* GymPulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymPulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		862512B62B10DDF8001930B9 /* GymPulseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymPulseTests.swift; sourceTree = "<group>"; };
+		862512BD2B10E45F001930B9 /* FirestoreServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreServiceTests.swift; sourceTree = "<group>"; };
 		865105FE2B0F877E0011B4A1 /* GymPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		865106012B0F877E0011B4A1 /* GymPulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymPulseApp.swift; sourceTree = "<group>"; };
 		865106032B0F877E0011B4A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		862512B52B10DDF8001930B9 /* GymPulseTests */ = {
 			isa = PBXGroup;
 			children = (
-				862512B62B10DDF8001930B9 /* GymPulseTests.swift */,
+				862512BD2B10E45F001930B9 /* FirestoreServiceTests.swift */,
 			);
 			path = GymPulseTests;
 			sourceTree = "<group>";
@@ -418,7 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				862512B72B10DDF8001930B9 /* GymPulseTests.swift in Sources */,
+				862512BE2B10E45F001930B9 /* FirestoreServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
