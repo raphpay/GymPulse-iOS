@@ -69,6 +69,8 @@
 		865106702B0FA74B0011B4A1 /* CreateWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651066F2B0FA74B0011B4A1 /* CreateWorkoutView.swift */; };
 		865106722B0FAAC20011B4A1 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106712B0FAAC20011B4A1 /* WorkoutView.swift */; };
 		86AA88A02B1DD7C2009631F7 /* SFSymbols+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AA889F2B1DD7C2009631F7 /* SFSymbols+Enum.swift */; };
+		86AA88A22B1DD8E8009631F7 /* WorkoutRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AA88A12B1DD8E8009631F7 /* WorkoutRow.swift */; };
+		86AA88A62B1DD92B009631F7 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AA88A52B1DD92B009631F7 /* Color+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +105,8 @@
 		8651066F2B0FA74B0011B4A1 /* CreateWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutView.swift; sourceTree = "<group>"; };
 		865106712B0FAAC20011B4A1 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		86AA889F2B1DD7C2009631F7 /* SFSymbols+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbols+Enum.swift"; sourceTree = "<group>"; };
+		86AA88A12B1DD8E8009631F7 /* WorkoutRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRow.swift; sourceTree = "<group>"; };
+		86AA88A52B1DD92B009631F7 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +230,7 @@
 				8625129C2B10977B001930B9 /* AddExerciseViewModel.swift */,
 				865106712B0FAAC20011B4A1 /* WorkoutView.swift */,
 				862512A02B10AF03001930B9 /* WorkoutViewModel.swift */,
+				86AA88A12B1DD8E8009631F7 /* WorkoutRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 				865106112B0F88760011B4A1 /* Assets+Enum.swift */,
 				862512A42B10D2F2001930B9 /* Ringtone+Enum.swift */,
 				86AA889F2B1DD7C2009631F7 /* SFSymbols+Enum.swift */,
+				86AA88A52B1DD92B009631F7 /* Color+Ext.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				862512A52B10D2F2001930B9 /* Ringtone+Enum.swift in Sources */,
 				865106692B0FA0320011B4A1 /* Exercise.swift in Sources */,
 				8651066E2B0FA6680011B4A1 /* MainViewModel.swift in Sources */,
+				86AA88A62B1DD92B009631F7 /* Color+Ext.swift in Sources */,
 				865106022B0F877E0011B4A1 /* GymPulseApp.swift in Sources */,
 				8625129F2B109A31001930B9 /* CreateWorkoutViewModel.swift in Sources */,
 				865106672B0F9FCD0011B4A1 /* Workout.swift in Sources */,
@@ -383,6 +390,7 @@
 				862512AF2B10D939001930B9 /* GlobalState.swift in Sources */,
 				865106702B0FA74B0011B4A1 /* CreateWorkoutView.swift in Sources */,
 				865106612B0F9A8A0011B4A1 /* LoginViewModel.swift in Sources */,
+				86AA88A22B1DD8E8009631F7 /* WorkoutRow.swift in Sources */,
 				865106122B0F88760011B4A1 /* Assets+Enum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
