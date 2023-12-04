@@ -219,18 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				865106032B0F877E0011B4A1 /* ContentView.swift */,
-				8651060F2B0F884A0011B4A1 /* LoginView.swift */,
-				865106602B0F9A8A0011B4A1 /* LoginViewModel.swift */,
-				8651065E2B0F93840011B4A1 /* MainView.swift */,
-				8651066D2B0FA6680011B4A1 /* MainViewModel.swift */,
-				8651066B2B0FA54C0011B4A1 /* ProfileView.swift */,
-				8651066F2B0FA74B0011B4A1 /* CreateWorkoutView.swift */,
-				8625129E2B109A31001930B9 /* CreateWorkoutViewModel.swift */,
-				8625129A2B108A48001930B9 /* AddExerciseView.swift */,
-				8625129C2B10977B001930B9 /* AddExerciseViewModel.swift */,
-				865106712B0FAAC20011B4A1 /* WorkoutView.swift */,
-				862512A02B10AF03001930B9 /* WorkoutViewModel.swift */,
-				86AA88A12B1DD8E8009631F7 /* WorkoutRow.swift */,
+				86AA88A72B1DFF77009631F7 /* Authentication */,
+				86AA88A82B1DFF8A009631F7 /* Main */,
+				86AA88A92B1DFF97009631F7 /* Workout */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +244,39 @@
 				865106682B0FA0320011B4A1 /* Exercise.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		86AA88A72B1DFF77009631F7 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8651060F2B0F884A0011B4A1 /* LoginView.swift */,
+				865106602B0F9A8A0011B4A1 /* LoginViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		86AA88A82B1DFF8A009631F7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8651065E2B0F93840011B4A1 /* MainView.swift */,
+				8651066D2B0FA6680011B4A1 /* MainViewModel.swift */,
+				8651066B2B0FA54C0011B4A1 /* ProfileView.swift */,
+				86AA88A12B1DD8E8009631F7 /* WorkoutRow.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		86AA88A92B1DFF97009631F7 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				8651066F2B0FA74B0011B4A1 /* CreateWorkoutView.swift */,
+				8625129E2B109A31001930B9 /* CreateWorkoutViewModel.swift */,
+				865106712B0FAAC20011B4A1 /* WorkoutView.swift */,
+				862512A02B10AF03001930B9 /* WorkoutViewModel.swift */,
+				8625129A2B108A48001930B9 /* AddExerciseView.swift */,
+				8625129C2B10977B001930B9 /* AddExerciseViewModel.swift */,
+			);
+			path = Workout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
