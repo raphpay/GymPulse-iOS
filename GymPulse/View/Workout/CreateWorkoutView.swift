@@ -15,6 +15,9 @@ struct CreateWorkoutView: View {
     
     var body: some View {
         ZStack {
+            
+            BackgroundImage()
+            
             VStack {
                 TextField("Workout Name", text: $workout.name)
                     .textFieldStyle(.roundedBorder)

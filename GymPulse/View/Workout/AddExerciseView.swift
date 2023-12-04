@@ -18,7 +18,7 @@ struct AddExerciseView: View {
     
     var body: some View {
         ZStack {
-            Color.black.opacity(0.8)
+            Color.black.opacity(0.6)
                 .onTapGesture {
                     hideAlert()
                 }
