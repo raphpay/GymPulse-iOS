@@ -42,6 +42,7 @@ struct MainView: View {
                         viewModel.showProfileView = true
                     } label: {
                         Image(systemName: SFSymbols.profile.name)
+                            .modifier(ToolbarModifier())
                     }
                 }
                 
@@ -55,6 +56,7 @@ struct MainView: View {
                             viewModel.createWorkout(modelContext)
                         } label: {
                             Image(systemName: SFSymbols.plus.name)
+                                .modifier(ToolbarModifier())
                         }
                     }
                 }
@@ -97,6 +99,19 @@ struct MainView: View {
         }
     }
 }
+
+struct ToolbarModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(4)
+            .background(
+                Circle()
+                    .foregroundColor(.customLightBlue)
+                    .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
+            )
+    }
+}
+
 
 #Preview {
     MainView()
