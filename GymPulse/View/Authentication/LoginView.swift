@@ -17,6 +17,7 @@ struct LoginView: View {
             BackgroundImage()
             
             VStack {
+                LogoImage()
                 
                 Spacer()
                 
