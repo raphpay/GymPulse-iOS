@@ -38,7 +38,7 @@ struct MainView: View {
                     Button {
                         viewModel.showProfileView = true
                     } label: {
-                        Image(systemName: "person.fill")
+                        Image(systemName: SFSymbols.profile.name)
                     }
                 }
                 
@@ -47,7 +47,7 @@ struct MainView: View {
                         Button {
                             viewModel.createWorkout(modelContext)
                         } label: {
-                            Image(systemName: "plus")
+                            Image(systemName: SFSymbols.plus.name)
                         }
                     }
                 }

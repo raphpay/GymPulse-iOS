@@ -26,7 +26,7 @@ struct ProfileView: View {
             Button {
                 playRingtone()
             } label: {
-                Image(systemName: "play.circle")
+                Image(systemName: SFSymbols.play.name)
             }
         }
         

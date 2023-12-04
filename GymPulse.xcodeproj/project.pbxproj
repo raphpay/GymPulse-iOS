@@ -68,6 +68,7 @@
 		8651066E2B0FA6680011B4A1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651066D2B0FA6680011B4A1 /* MainViewModel.swift */; };
 		865106702B0FA74B0011B4A1 /* CreateWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651066F2B0FA74B0011B4A1 /* CreateWorkoutView.swift */; };
 		865106722B0FAAC20011B4A1 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865106712B0FAAC20011B4A1 /* WorkoutView.swift */; };
+		86AA88A02B1DD7C2009631F7 /* SFSymbols+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AA889F2B1DD7C2009631F7 /* SFSymbols+Enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		8651066D2B0FA6680011B4A1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		8651066F2B0FA74B0011B4A1 /* CreateWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutView.swift; sourceTree = "<group>"; };
 		865106712B0FAAC20011B4A1 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		86AA889F2B1DD7C2009631F7 /* SFSymbols+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbols+Enum.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			children = (
 				865106112B0F88760011B4A1 /* Assets+Enum.swift */,
 				862512A42B10D2F2001930B9 /* Ringtone+Enum.swift */,
+				86AA889F2B1DD7C2009631F7 /* SFSymbols+Enum.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				8651065F2B0F93840011B4A1 /* MainView.swift in Sources */,
 				8651065B2B0F8E260011B4A1 /* FirestoreService.swift in Sources */,
 				865106102B0F884A0011B4A1 /* LoginView.swift in Sources */,
+				86AA88A02B1DD7C2009631F7 /* SFSymbols+Enum.swift in Sources */,
 				8625129B2B108A48001930B9 /* AddExerciseView.swift in Sources */,
 				865106042B0F877E0011B4A1 /* ContentView.swift in Sources */,
 				862512A52B10D2F2001930B9 /* Ringtone+Enum.swift in Sources */,
