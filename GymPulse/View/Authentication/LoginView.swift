@@ -14,16 +14,11 @@ struct LoginView: View {
     
     var body: some View {
         ZStack {
-            Image(Assets.appBackground)
-                .resizable()
-                .ignoresSafeArea()
-                .opacity(0.6)
+            BackgroundImage()
             
             VStack {
-                Image(Assets.logo)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 200, height: 50)
+                LogoImage()
+                
                 Spacer()
                 
                 TextField("Email", text: $viewModel.email)

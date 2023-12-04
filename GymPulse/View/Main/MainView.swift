@@ -17,7 +17,10 @@ struct MainView: View {
     
     var body: some View {
         NavigationStack(path: $viewModel.path) {
-            VStack {
+            ZStack {
+                
+                BackgroundImage()
+                
                 if viewModel.filteredWorkouts.isEmpty {
                     emptyView
                 } else {
@@ -38,8 +41,13 @@ struct MainView: View {
                     Button {
                         viewModel.showProfileView = true
                     } label: {
-                        Image(systemName: "person.fill")
+                        Image(systemName: SFSymbols.profile.name)
+                            .modifier(ToolbarModifier())
                     }
+                }
+                
+                ToolbarItem(placement: .principal) {
+                    LogoImage()
                 }
                 
                 if !workouts.isEmpty {
@@ -47,7 +55,8 @@ struct MainView: View {
                         Button {
                             viewModel.createWorkout(modelContext)
                         } label: {
-                            Image(systemName: "plus")
+                            Image(systemName: SFSymbols.plus.name)
+                                .modifier(ToolbarModifier())
                         }
                     }
                 }
@@ -57,7 +66,7 @@ struct MainView: View {
     
     var emptyView: some View {
         ContentUnavailableView(label: {
-            Label("No Workouts", systemImage: "dumbbell")
+            Label("No Workouts", systemImage: SFSymbols.dumbbell.name)
         }, description: {
             Text("Start creating a workout to use the app")
         }, actions: {
@@ -71,12 +80,12 @@ struct MainView: View {
     }
     
     var workoutList: some View {
-        VStack {
+        ScrollView {
             ForEach(viewModel.filteredWorkouts) { workout in
                 NavigationLink {
                     WorkoutView(workout: workout)
                 } label: {
-                    Text(workout.name)
+                    WorkoutRow(workout: workout)
                 }
 
             }
@@ -90,6 +99,19 @@ struct MainView: View {
         }
     }
 }
+
+struct ToolbarModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(4)
+            .background(
+                Circle()
+                    .foregroundColor(.customLightBlue)
+                    .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
+            )
+    }
+}
+
 
 #Preview {
     MainView()

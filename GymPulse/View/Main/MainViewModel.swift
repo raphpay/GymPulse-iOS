@@ -35,6 +35,7 @@ class MainViewModel: ObservableObject {
             try modelContext.delete(model: Workout.self, where: #Predicate { workout in
                 workout.ownerID == ownerID
             })
+            withAnimation { self.filteredWorkouts = [] }
         } catch let error {
             print(error)
         }

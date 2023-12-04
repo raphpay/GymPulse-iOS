@@ -18,7 +18,7 @@ struct AddExerciseView: View {
     
     var body: some View {
         ZStack {
-            Color.black.opacity(0.8)
+            Color.black.opacity(0.6)
                 .onTapGesture {
                     hideAlert()
                 }
@@ -39,7 +39,7 @@ struct AddExerciseView: View {
                     Button {
                         viewModel.weight -= 0.5
                     } label: {
-                        Image(systemName: "minus")
+                        Image(systemName: SFSymbols.minus.name)
                     }
                     Slider(value: $viewModel.weight, in: viewModel.minimumWeight...viewModel.maximumWeight,
                            step: 0.5) {
@@ -52,7 +52,7 @@ struct AddExerciseView: View {
                     Button {
                         viewModel.weight += 0.5
                     } label: {
-                        Image(systemName: "plus")
+                        Image(systemName: SFSymbols.plus.name)
                     }
                 }
                 

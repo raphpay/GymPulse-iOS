@@ -15,6 +15,9 @@ struct CreateWorkoutView: View {
     
     var body: some View {
         ZStack {
+            
+            BackgroundImage()
+            
             VStack {
                 TextField("Workout Name", text: $workout.name)
                     .textFieldStyle(.roundedBorder)
@@ -50,7 +53,7 @@ struct CreateWorkoutView: View {
                         Button {
                             workout.exercises.remove(at: index)
                         } label: {
-                            Image(systemName: "trash")
+                            Image(systemName: SFSymbols.delete.name)
                                 .tint(.red)
                         }
                     }
