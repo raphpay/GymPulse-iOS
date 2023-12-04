@@ -15,25 +15,19 @@ struct WorkoutRow: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(.customMediumBlue)
-//              .background(Color.customMediumBlue)
                 .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
             
             HStack {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
-                      .foregroundColor(.red)
-                      .frame(width: 50, height: 50)
-                      .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                          .inset(by: 0.3)
-                          .stroke(.black, lineWidth: 0.6)
-                      )
+                        .stroke(lineWidth: 0.6)
+                        .frame(width: 50, height: 50)
                     
                     Image(systemName: SFSymbols.dumbbell.name)
                         .font(.title3)
                 }
                 
-                VStack {
+                VStack(alignment: .leading) {
                     Text(workout.name)
                         .font(.system(size: 16))
                         .fontWeight(.semibold)
@@ -46,7 +40,7 @@ struct WorkoutRow: View {
                 Spacer()
                 
                 Image(systemName: SFSymbols.forward.name)
-                    .font(.title)
+                    .font(.title2)
             }
             .padding()
         }

@@ -24,14 +24,6 @@ struct MainView: View {
                     .ignoresSafeArea()
                     .opacity(0.6)
                 
-                VStack {
-                    Image(Assets.logo)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 200, height: 50)
-                    Spacer()
-                }
-                
                 if viewModel.filteredWorkouts.isEmpty {
                     emptyView
                 } else {
@@ -56,6 +48,13 @@ struct MainView: View {
                     }
                 }
                 
+                ToolbarItem(placement: .principal) {
+                    Image(Assets.logo)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 200, height: 50)
+                }
+                
                 if !workouts.isEmpty {
                     ToolbarItem {
                         Button {
@@ -71,7 +70,7 @@ struct MainView: View {
     
     var emptyView: some View {
         ContentUnavailableView(label: {
-            Label("No Workouts", systemImage: "dumbbell")
+            Label("No Workouts", systemImage: SFSymbols.dumbbell.name)
         }, description: {
             Text("Start creating a workout to use the app")
         }, actions: {
