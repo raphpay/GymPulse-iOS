@@ -226,8 +226,7 @@
 				86AA88A72B1DFF77009631F7 /* Authentication */,
 				86AA88A82B1DFF8A009631F7 /* Main */,
 				86AA88A92B1DFF97009631F7 /* Workout */,
-				86AA88AA2B1DFFF6009631F7 /* BackgroundImage.swift */,
-				86AA88AC2B1E0027009631F7 /* LogoImage.swift */,
+				86AA88AE2B1E006B009631F7 /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,6 +282,15 @@
 				8625129C2B10977B001930B9 /* AddExerciseViewModel.swift */,
 			);
 			path = Workout;
+			sourceTree = "<group>";
+		};
+		86AA88AE2B1E006B009631F7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				86AA88AA2B1DFFF6009631F7 /* BackgroundImage.swift */,
+				86AA88AC2B1E0027009631F7 /* LogoImage.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
