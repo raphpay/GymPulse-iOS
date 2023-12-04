@@ -5,6 +5,7 @@
 //  Created by Raphaël Payet on 24/11/2023.
 //
 
+import Foundation
 import SwiftUI
 import AVFoundation
 
@@ -13,6 +14,7 @@ class WorkoutViewModel: ObservableObject {
     @Published var currentSeries = 1
     @Published var isTimerRunning = false
     @Published var timeRemaining: TimeInterval = 0
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var player: AVAudioPlayer?
@@ -31,6 +33,18 @@ class WorkoutViewModel: ObservableObject {
             currentExerciseIndex + 1 < workout.exercises.count ? "Next Exercise" : "Finish Workout"
         )
     }
+    var formattedTime: String {
+        var string = ""
+        let minutes = Int(timeRemaining) / 60
+        let seconds = Int(timeRemaining) % 60
+
+        if minutes > 0 {
+            string = "\(minutes)min \(seconds)sec"
+        } else {
+            string = "\(seconds)sec"
+        }
+        return string
+    }
     
     func setup(workout: Workout, dismiss: DismissAction, globalState: GlobalState) {
         self.workout = workout
@@ -48,11 +62,11 @@ class WorkoutViewModel: ObservableObject {
     }
     
     func startTimer() {
-        isTimerRunning = true
+        withAnimation { self.isTimerRunning = true }
     }
     
     func stopTimer() {
-        isTimerRunning = false
+        withAnimation { self.isTimerRunning = false }
         guard let workout = workout else { return }
         timeRemaining = workout.breakDurationInS
     }
