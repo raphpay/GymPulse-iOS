@@ -15,35 +15,38 @@ struct ProfileView: View {
     @State private var audioPlayer: AVAudioPlayer?
     
     var body: some View {
-        
-        HStack {
-            Text("Choose a ringtone:")
-            Picker("Please choose a ringtone", selection: $globalState.ringtone) {
-                ForEach(Ringtone.allCases, id: \.self) {
-                    Text($0.fileName)
+        ZStack {
+            BackgroundImage()
+            
+            VStack {
+                HStack {
+                    Text("Choose a ringtone:")
+                    Picker("Please choose a ringtone", selection: $globalState.ringtone) {
+                        ForEach(Ringtone.allCases, id: \.self) {
+                            Text($0.fileName)
+                        }
+                    }
+                    Button {
+                        playRingtone()
+                    } label: {
+                        Image(systemName: SFSymbols.play.name)
+                    }
                 }
+                
+                Button {
+                    let result = AuthService.shared.signOut()
+                    switch result {
+                    case .success( _):
+                        authDataProvider.isLoggedIn = false
+                        authDataProvider.currentUser = nil
+                    case .failure(let failure):
+                        print(failure.localizedDescription)
+                    }
+                } label: {
+                    Text("Log out")
+                }
+                .tint(.red)
             }
-            Button {
-                playRingtone()
-            } label: {
-                Image(systemName: SFSymbols.play.name)
-            }
-        }
-        
-        
-
-        
-        Button {
-            let result = AuthService.shared.signOut()
-            switch result {
-            case .success( _):
-                authDataProvider.isLoggedIn = false
-                authDataProvider.currentUser = nil
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        } label: {
-            Text("Log out")
         }
     }
     
