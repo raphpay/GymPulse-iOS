@@ -19,10 +19,7 @@ struct MainView: View {
         NavigationStack(path: $viewModel.path) {
             ZStack {
                 
-                Image(Assets.appBackground)
-                    .resizable()
-                    .ignoresSafeArea()
-                    .opacity(0.6)
+                BackgroundImage()
                 
                 if viewModel.filteredWorkouts.isEmpty {
                     emptyView
@@ -49,10 +46,7 @@ struct MainView: View {
                 }
                 
                 ToolbarItem(placement: .principal) {
-                    Image(Assets.logo)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 200, height: 50)
+                    LogoImage()
                 }
                 
                 if !workouts.isEmpty {

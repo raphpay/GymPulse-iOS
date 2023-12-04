@@ -16,24 +16,28 @@ struct WorkoutView: View {
     @StateObject private var viewModel = WorkoutViewModel()
     
     var body: some View {
-        VStack {
-            ForEach(workout.exercises) { exercise in
-                let isCurrentExercise = viewModel.currentExercise.id == exercise.id
+        ZStack {
+            
+            
+            VStack {
+                ForEach(workout.exercises) { exercise in
+                    let isCurrentExercise = viewModel.currentExercise.id == exercise.id
+                    
+                    Text(exercise.name)
+                        .font(isCurrentExercise ? .title : .body)
+                        .fontWeight(isCurrentExercise ? .bold : .regular)
+                }
                 
-                Text(exercise.name)
-                    .font(isCurrentExercise ? .title : .body)
-                    .fontWeight(isCurrentExercise ? .bold : .regular)
+                Text("\(viewModel.currentSeries) / \(viewModel.currentExercise.seriesCount)")
+                Text("\(viewModel.timeRemaining)")
+                
+                Button {
+                    viewModel.startTimer()
+                } label: {
+                    Text(viewModel.nextButtonText)
+                }
+                .buttonStyle(.borderedProminent)
             }
-            
-            Text("\(viewModel.currentSeries) / \(viewModel.currentExercise.seriesCount)")
-            Text("\(viewModel.timeRemaining)")
-            
-            Button {
-                viewModel.startTimer()
-            } label: {
-                Text(viewModel.nextButtonText)
-            }
-            .buttonStyle(.borderedProminent)
         }
         .navigationTitle(workout.name)
         .onAppear {
