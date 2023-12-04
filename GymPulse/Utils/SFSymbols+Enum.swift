@@ -15,6 +15,7 @@ enum SFSymbols: String {
     case pause = "pause.circle"
     case delete = "trash"
     case forward = "chevron.right"
+    case dumbbell = "dumbbell"
     
     var name: String {
         self.rawValue

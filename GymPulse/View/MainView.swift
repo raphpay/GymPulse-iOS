@@ -17,7 +17,21 @@ struct MainView: View {
     
     var body: some View {
         NavigationStack(path: $viewModel.path) {
-            VStack {
+            ZStack {
+                
+                Image(Assets.appBackground)
+                    .resizable()
+                    .ignoresSafeArea()
+                    .opacity(0.6)
+                
+                VStack {
+                    Image(Assets.logo)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 200, height: 50)
+                    Spacer()
+                }
+                
                 if viewModel.filteredWorkouts.isEmpty {
                     emptyView
                 } else {
@@ -71,12 +85,12 @@ struct MainView: View {
     }
     
     var workoutList: some View {
-        VStack {
+        ScrollView {
             ForEach(viewModel.filteredWorkouts) { workout in
                 NavigationLink {
                     WorkoutView(workout: workout)
                 } label: {
-                    Text(workout.name)
+                    WorkoutRow(workout: workout)
                 }
 
             }
