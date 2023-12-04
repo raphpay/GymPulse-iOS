@@ -71,7 +71,6 @@ struct WorkoutView: View {
             viewModel.setup(workout: workout, dismiss: dismiss, globalState: globalState)
         }
         .onReceive(viewModel.timer) { _ in
-            // TODO: Refactor this condition
             if viewModel.isTimerRunning {
                 if viewModel.timeRemaining > 0 {
                     viewModel.timeRemaining -= 1
